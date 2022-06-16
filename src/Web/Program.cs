@@ -1,8 +1,5 @@
 ﻿using System.Net.Mime;
 using Ardalis.ListStartupServices;
-using BlazorAdmin;
-using BlazorAdmin.Services;
-using Blazored.LocalStorage;
 using BlazorShared;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -15,6 +12,7 @@ using Microsoft.eShopWeb.Infrastructure.Identity;
 using Microsoft.eShopWeb.Web;
 using Microsoft.eShopWeb.Web.Configuration;
 using Microsoft.eShopWeb.Web.HealthChecks;
+using Microsoft.eShopWeb.Web.Services;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -86,11 +84,11 @@ builder.Services.AddScoped<HttpClient>(s => new HttpClient
 });
 
 // add blazor services
-builder.Services.AddBlazoredLocalStorage();
+//builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddScoped<ToastService>();
+//builder.Services.AddScoped<ToastService>();
 builder.Services.AddScoped<HttpService>();
-builder.Services.AddBlazorServices();
+//builder.Services.AddBlazorServices();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
